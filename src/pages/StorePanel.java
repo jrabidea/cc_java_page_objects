@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Created by jrabidea on 8/28/15.
@@ -16,11 +17,13 @@ public class StorePanel extends BasePageObject {
     private static String[] productsBoughtId = {"productOwned0", "productOwned1", "productOwned2", "productOwned3"
             , "productOwned","productOwned5", "productOwned6", "productOwned7", "productOwned8", "productOwned9"};
     private static int round = 11;
+    By productUpgrade = By.id("upgrade0");
 
     public StorePanel (WebDriver driver){
         super(driver);
     }
 
+    //A WebElement array is created for all the products in the store that have the class 'product unlocked enabled'
     public WebElement[] getProductElements(){
 
         List<WebElement> productElementList = driver.findElements(products);
@@ -34,17 +37,20 @@ public class StorePanel extends BasePageObject {
         return productElements;
     }
 
-
+    // Buys the store products
     public void buyStoreProducts(Boolean checkMax){
 
-        WebElement[] productsArray = getProductElements();
         int maximum = round;
 
+        WebElement[] productsArray = getProductElements();
+
+        // Sets the maximum number of products to buy for an indiviual product
         if (checkMax == true) {
             maximum = setMaxBuy(getTotalProductsBought());
         }
 
-        for (int i = 0; i < getProductElements().length; i++) {
+        // For each product, the product is bought if the individual product is less than the set maximum value
+        for (int i = 0; i < productsArray.length; i++) {
             if (getNumProductsBought(productsBoughtId[i]) < maximum) {
                 productsArray[i].click();
             }
@@ -52,10 +58,15 @@ public class StorePanel extends BasePageObject {
 
     }
 
+
+    // Gets the total number of products bought for all products
     public int getTotalProductsBought(){
 
-        for(int i = 0; i < getProductElements().length; i++){
 
+        for(int i = 0; i < getProductElements().length; i++){
+            // Checks to see if the element returns an empty string. If it does, then 0 is added to the total number
+            // of products. If an element returns a number, then the number is added to the total number of
+            // products bought.
             if (driver.findElement(By.id(productsBoughtId[i])).getText().equals("")){
 
                 totalProductsBought = totalProductsBought + 0;
@@ -69,8 +80,11 @@ public class StorePanel extends BasePageObject {
 
     }
 
+    // Gets the number of products bought for an individual product
     public int getNumProductsBought(String productId){
 
+        // Checks to see if the element returns an empty string. If it does then the number of products bought for
+        //  the product is set to return 0. If it returns a number, then that number is returned.
         if(driver.findElement(By.id(productId)).getText().equals("")){
             return 0;
         }else {
@@ -78,12 +92,12 @@ public class StorePanel extends BasePageObject {
         }
     }
 
+    // Set the maximum number of products. The total number of products bought is the argument.
     public int setMaxBuy(int productsBought){
 
         if(productsBought > 80){
             round = 11;
         }
-
         else if (productsBought == 80){
             round = 21;
         }
@@ -92,6 +106,19 @@ public class StorePanel extends BasePageObject {
         }
 
         return round;
+    }
+
+    public void buyProductUpgrade(){
+
+        try {
+            if (driver.findElement(productUpgrade).getAttribute("className").equals("crate upgrade enabled")) {
+                driver.findElement(productUpgrade).click();
+            }
+        }catch(NoSuchElementException d){
+            d.getMessage();
+            System.out.println("Products have not been purchased yet");
+        }
+
     }
 
 }

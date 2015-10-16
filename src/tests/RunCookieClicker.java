@@ -31,6 +31,7 @@ public class RunCookieClicker extends BaseTest{
         Boolean setMax = true;
         while(play) {
             cp.clickCookie();
+            sp.buyProductUpgrade();
             if (setMax == true) {
                 sp.buyStoreProducts(true);
                 setMax = false;
