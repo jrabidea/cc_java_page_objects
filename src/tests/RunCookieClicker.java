@@ -28,15 +28,20 @@ public class RunCookieClicker extends BaseTest{
         mp.loadGame();
         ts.timer();
         Boolean play = true;
-        while(play){
+        Boolean setMax = true;
+        while(play) {
             cp.clickCookie();
-            if(ts.minutes > 5){
-                sp.buyStoreProducts();
+            if (setMax == true) {
+                sp.buyStoreProducts(true);
+                setMax = false;
+            } else {
+                sp.buyStoreProducts(false);
+            }
+            if (ts.minutes == 5) {
                 System.out.println("Saving game.....");
-                if(ts.minutes == 8) {
-                    mp.saveGame();
-                    ts.minutes = 0;
-                }
+                mp.saveGame();
+                ts.minutes = 0;
+                setMax = true;
             }
         }
     }

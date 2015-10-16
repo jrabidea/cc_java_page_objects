@@ -39,7 +39,6 @@ public class MiddlePanel extends BasePageObject{
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy((By.id("fancyButton"))));
     }
 
-
     // WebElement array is created for all the graphic buttons
     public WebElement[] getGraphicWebElements(){
 
@@ -95,7 +94,6 @@ public class MiddlePanel extends BasePageObject{
     public void loadGame(){
         clickMenu();
         menuOpenWait();
-        driver.findElement(importSave).click();
         String codeImport = null;
         try{
             BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -103,20 +101,20 @@ public class MiddlePanel extends BasePageObject{
             while((line = reader.readLine()) != null){
                 codeImport = line;
             }
+            driver.findElement(importSave).click();
             driver.findElement(textArea).sendKeys(codeImport);
-        }catch(FileNotFoundException f){f.getMessage();
+            driver.findElement(loadButton).click();
+            clickAllDone();
+            clickMenu();
+        }catch(FileNotFoundException f){
             f.getMessage();
             System.out.print("The save file has not been created");
+            clickMenu();
         }catch(IOException p){
             p.getMessage();
         }catch(NullPointerException k){
             k.getMessage();
         }
-        driver.findElement(loadButton).click();
-        clickAllDone();
-        clickMenu();
-
-
     }
 
 }
