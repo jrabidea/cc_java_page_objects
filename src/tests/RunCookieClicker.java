@@ -39,7 +39,5 @@ public class RunCookieClicker extends BaseTest{
                 }
             }
         }
-
-
     }
 }
