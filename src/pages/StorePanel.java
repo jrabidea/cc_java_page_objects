@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+import org.openqa.selenium.NoSuchElementException;
 
 /**
  * Created by jrabidea on 8/28/15.
