@@ -1,10 +1,7 @@
 package pages;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,6 +21,7 @@ public class MiddlePanel extends BasePageObject{
     By textArea = By.id("textareaPrompt");
     By allDoneButton = By.id("promptOption0");
     By loadButton = By.id("promptContent");
+    By goldenCookie = By.id("goldenCookie");
 
     private static final File file = new File("CookieClicker.txt");
 
@@ -77,6 +75,7 @@ public class MiddlePanel extends BasePageObject{
         driver.findElement(allDoneButton).click();
     }
 
+    // Saves the game
     public void saveGame(){
         Boolean save = true;
 
@@ -98,6 +97,7 @@ public class MiddlePanel extends BasePageObject{
             clickMenu();
     }
 
+    // Loads a previously saved game
     public void loadGame(){
         clickMenu();
         menuOpenWait();
@@ -121,6 +121,17 @@ public class MiddlePanel extends BasePageObject{
             p.getMessage();
         }catch(NullPointerException k){
             k.getMessage();
+        }
+    }
+
+    // Clicks the golden cookie when it appears on the page.
+    public void clickGoldenCookie(){
+
+        try{
+            driver.findElement(goldenCookie).click();
+            System.out.println("Golden cookie clicked!");
+        }catch(NoSuchElementException l ){
+            String error2 = l.getMessage();
         }
     }
 
