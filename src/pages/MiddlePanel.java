@@ -2,6 +2,7 @@ package pages;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -77,18 +78,24 @@ public class MiddlePanel extends BasePageObject{
     }
 
     public void saveGame(){
+        Boolean save = true;
 
-        clickMenu();
-        menuOpenWait();
-        driver.findElement(exportSave).click();
-        String saveCode = driver.findElement(textArea).getText();
-        try {
-            FileUtils.writeStringToFile(file, saveCode);
-        }catch (IOException d){
-            d.getMessage();
-        }
-        clickAllDone();
-        clickMenu();
+        while(save)
+            try {
+                save = false;
+                clickMenu();
+                menuOpenWait();
+                driver.findElement(exportSave).click();
+                String saveCode = driver.findElement(textArea).getText();
+                FileUtils.writeStringToFile(file, saveCode);
+            }catch (IOException d){
+                d.getMessage();
+            }catch (StaleElementReferenceException g){
+                String error = g.getMessage();
+                save = true;
+            }
+            clickAllDone();
+            clickMenu();
     }
 
     public void loadGame(){
