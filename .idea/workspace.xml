@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32c08ba8-0ade-4a1a-84c7-807660bc7f5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/RunCookieClicker.java" afterPath="$PROJECT_DIR$/src/tests/RunCookieClicker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/MiddlePanel.java" afterPath="$PROJECT_DIR$/src/pages/MiddlePanel.java" />
     </list>
     <ignored path="Automation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RunCookieClicker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunCookieClicker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/RunCookieClicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7367387">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiddlePanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MiddlePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/MiddlePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8231827">
+              <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
               <folding>
                 <element signature="e#970#971#0" expanded="true" />
                 <element signature="e#999#1000#0" expanded="true" />
@@ -95,8 +95,8 @@
       <list>
         <option value="$PROJECT_DIR$/Automation.iml" />
         <option value="$PROJECT_DIR$/src/pages/StorePanel.java" />
-        <option value="$PROJECT_DIR$/src/pages/MiddlePanel.java" />
         <option value="$PROJECT_DIR$/src/tests/RunCookieClicker.java" />
+        <option value="$PROJECT_DIR$/src/pages/MiddlePanel.java" />
       </list>
     </option>
   </component>
@@ -1018,14 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/StorePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1043,25 +1035,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/MiddlePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/RunCookieClicker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/MiddlePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8231827">
+          <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
           <folding>
             <element signature="e#970#971#0" expanded="true" />
             <element signature="e#999#1000#0" expanded="true" />
             <element signature="e#2221#2222#0" expanded="true" />
             <element signature="e#2278#2279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/RunCookieClicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7367387">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

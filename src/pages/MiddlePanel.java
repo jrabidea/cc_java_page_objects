@@ -130,7 +130,7 @@ public class MiddlePanel extends BasePageObject{
         try{
             driver.findElement(goldenCookie).click();
             System.out.println("Golden cookie clicked!");
-        }catch(NoSuchElementException l ){
+        }catch(ElementNotVisibleException l ){
             String error2 = l.getMessage();
         }
     }
