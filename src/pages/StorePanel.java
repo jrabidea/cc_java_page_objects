@@ -15,7 +15,7 @@ public class StorePanel extends BasePageObject {
     By products = By.xpath("//*[@class = 'product unlocked enabled']");
     private static int totalProductsBought = 0;
     private static String[] productsBoughtId = {"productOwned0", "productOwned1", "productOwned2", "productOwned3"
-            , "productOwned","productOwned5", "productOwned6", "productOwned7", "productOwned8", "productOwned9"};
+            , "productOwned4","productOwned5", "productOwned6", "productOwned7", "productOwned8", "productOwned9"};
     private static int round = 11;
     By productUpgrade = By.id("upgrade0");
 
