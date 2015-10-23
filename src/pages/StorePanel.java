@@ -95,10 +95,10 @@ public class StorePanel extends BasePageObject {
     // Set the maximum number of products. The total number of products bought is the argument.
     public int setMaxBuy(int productsBought){
 
-        if(productsBought > 80){
+        if(productsBought <= 80){
             round = 11;
         }
-        else if (productsBought == 80){
+        else if (productsBought > 81 && productsBought < 210){
             round = 21;
         }
         else if (productsBought > 210 && productsBought < 490){
